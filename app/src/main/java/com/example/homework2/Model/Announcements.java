@@ -1,4 +1,4 @@
-package com.example.homework2;
+package com.example.homework2.Model;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -18,6 +18,8 @@ import android.widget.ListView;
 
 import android.os.AsyncTask;
 import android.app.ProgressDialog;
+
+import com.example.homework2.R;
 
 import java.util.ArrayList;
 

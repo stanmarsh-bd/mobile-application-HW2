@@ -1,4 +1,4 @@
-package com.example.homework2;
+package com.example.homework2.Model;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.homework2.R;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
