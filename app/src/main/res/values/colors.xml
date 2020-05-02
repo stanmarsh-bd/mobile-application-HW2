@@ -27,4 +27,6 @@
     <color name="purplediff">#C186B1</color>
     <color name="pinkdiff">#FFE0F0</color>
     <color name="bluediff">#000833</color>
+    <color name="orangetone">#FF9933</color>
+    <color name="pastelorange">#FFC34D</color>
 </resources>

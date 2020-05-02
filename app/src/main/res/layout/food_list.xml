@@ -12,26 +12,30 @@
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
         android:src="@drawable/yemek"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:text="Welcome to AYBU Computer Engineering Department Page! Education was interrupted due to COVID-19 disease. For this reason, you cannot see the Actual Food List.\n FOOD LIST"
+        android:textColor="@color/bluediff"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:gravity="center" />
+
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="FoodList"
         android:textColor="@color/colorOrange"
-        android:layout_weight="0.2"
+        android:layout_weight="1"
         android:textStyle="bold"
         android:textSize="20dp"
         android:gravity="center|top"
         android:id="@+id/lst_food"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:text="Welcome to AYBU Computer Engineering Department Page! Education was interrupted due to COVID-19 disease. For this reason, you cannot see the Food List."
-        android:textColor="@color/bluediff"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:gravity="center|top"
-        android:layout_margin="30dp" />
+
 
 
 

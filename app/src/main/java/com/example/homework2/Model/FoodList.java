@@ -25,11 +25,8 @@ public class FoodList extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.food_list, container, false);
-
         textView = view.findViewById(R.id.lst_food);
-
         new JSOUP().execute();
-
         return view;
     }
 
@@ -40,7 +37,7 @@ public class FoodList extends Fragment {
         protected void onPreExecute(){
             super.onPreExecute();
             progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setMessage("loading...");
+            progressDialog.setMessage("Loading...");
             progressDialog.show();
 
         }
@@ -50,7 +47,7 @@ public class FoodList extends Fragment {
             try{
                 detailText = "";
                 Document doc =
-                        Jsoup.connect("https://aybu.edu.tr/sks/").get();
+                        Jsoup.connect("http://web.archive.org/web/20190406185041/https://aybu.edu.tr/sks/").get();
                 final Elements element = doc.select("table tbody tr td  table tbody tr");
                 for(int i = 0; i<element.size();i++){
                     detailText += "\n" + element.get(i).text();

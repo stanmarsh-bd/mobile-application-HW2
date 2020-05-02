@@ -4,14 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Model.News">
+    android:background="@color/orangetone"
+    tools:context=".Model.News"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/lst_news"
         android:gravity="center"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        />
 
 </LinearLayout>

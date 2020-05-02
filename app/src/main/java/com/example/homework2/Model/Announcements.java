@@ -32,7 +32,7 @@ public class Announcements extends Fragment {
 
     private ArrayList<String> arrayList = new ArrayList<>();
     private ArrayAdapter<String> arrayAdapter;
-    private Elements links;
+    private Elements elements;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,7 +52,7 @@ public class Announcements extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setMessage("loading...");
+            progressDialog.setMessage("Loading...");
             progressDialog.show();
         }
 
@@ -62,7 +62,7 @@ public class Announcements extends Fragment {
 
                 Document doc = Jsoup.connect("https://aybu.edu.tr/muhendislik/bilgisayar/").get();
                 Elements elements = doc.select(".caContent > .cncItem");
-                links = doc.select(".caContent .cncItem a");
+                Announcements.this.elements = doc.select(".caContent .cncItem a");
                 arrayList = new ArrayList<>();
                 for (int i = 0; i < elements.size(); i++) {
                     detailText = elements.get(i).text();
@@ -93,7 +93,7 @@ public class Announcements extends Fragment {
         }
 
         private String getElementLink(int ind) {
-            return links.get(ind).attr("href");
+            return elements.get(ind).attr("href");
         }
     }
 

@@ -29,7 +29,7 @@ public class News extends Fragment {
 
     private ArrayList<String> arrayList = new ArrayList<>();
     private ArrayAdapter<String> arrayAdapter;
-    private Elements links;
+    private Elements elements;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -37,6 +37,7 @@ public class News extends Fragment {
         lst_news = view.findViewById(R.id.lst_news);
         new JSOUP().execute();
         return view;
+
     }
 
     public class JSOUP extends AsyncTask<Void, Void, Void> {
@@ -46,7 +47,7 @@ public class News extends Fragment {
         protected void onPreExecute(){
             super.onPreExecute();
             progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setMessage("loading...");
+            progressDialog.setMessage("Loading...");
             progressDialog.show();
         }
 
@@ -60,8 +61,9 @@ public class News extends Fragment {
                 for(int i = 0; i<elements.size();i++){
                     detailText = elements.get(i).text();
                     arrayList.add(detailText);
+
                 }
-                links = doc.select(".cnContent .cncItem a");
+                News.this.elements = doc.select(".cnContent .cncItem a");
             }
 
             catch (Exception e){
@@ -74,6 +76,7 @@ public class News extends Fragment {
             progressDialog.dismiss();
             arrayAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_list_item_1,arrayList.toArray(new String[arrayList.size()]));
             lst_news.setAdapter(arrayAdapter);
+
 
 
             lst_news.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -89,11 +92,20 @@ public class News extends Fragment {
         }
 
         private String getElementLink(int ind){
-            return links.get(ind).attr("href");
+            return elements.get(ind).attr("href");
         }
 
 
 
     }
+
+
+
+
+
+
+
+
+
 
 }
